@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="todos">
+<div class="todo">
+    <div class="todo_head">
+        {{ todo.name }}
+        <small class="text-muted">{{ todo.date_of_create.strftime('%d.%m.%Y-%H.%M') }}</small>
+    </div>
+    <div class="todo_body">
+        {{ todo.body }}
+    </div>
+      <a href="{{ url_for('todos.complete_todo', todo_id=todo.id) }}"><p class="btn btn-danger btn-sm m-1" style="background-color: green; border: green 1px solid;">Завершить</p></a>
+        <a href="#"><p class="btn btn-secondary btn-sm m-2">Обновить</p></a>
+        <a href="{{ url_for('todos.delete_todo', todo_id=todo.id) }}"><p class="btn btn-danger btn-sm m-1">Удалить</p></a>
+
+</div>
+</div>
+
+{% endblock content %}

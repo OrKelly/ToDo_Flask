@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    background-color: ivory;
+    font-family: inherit;
+     display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 100px);
+    height: 100%;
+    font-size: 20px;
+}
+.header {
+    height: 50px;
+    background-color: #AFEEEE;
+    margin-bottom: 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.navbar li {
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    font-size: 20px;
+    height: 100%;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar p:hover {
+    transition-duration: 0.5s;
+    background-color: #87CEFA;
+}
+
+.footer {
+    display: flex;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+    background-color: antiquewhite;
+}
+
+.info {
+    display: flex;
+    margin-left: 150px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.btn-s {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 200px;
+    margin-left: 130px;
+}
+
+a.button {
+  display: inline-block;
+  background: #2196f3;
+  color: #fff;
+  padding: 12px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: Tahoma;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 100;
+    margin-top: 30px;
+}
+.btn-s a:hover {
+    transition-duration: 0.5s;
+    opacity: 0.8;
+}
+
+.register_form{
+    height: 200px;
+    align-items: center;
+    text-align: center;
+}
+
+.nothing {
+    text-align: center;
+}
+
+.account-img{
+    width:400px;
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+
+.navbar_todo {
+    text-align: center;
+    margin: 0;
+   position: absolute;               /* 2 */
+   top: 30%;                         /* 3 */
+   transform: translate(0, -50%) }
+
+
+
+.navbar_todo li {
+    list-style: none;
+}
+.navbar_todo ul li a.active:before{
+    display: block;
+}
+
+.active {
+    background-color: dodgerblue;
+    color: white;
+    padding: 10px;
+    border-radius: 200px;
+}
+
+.active a {
+    color: white;
+}
+
+.navbar_acc {
+    display: inline;
+    margin: 20px;
+    align-self: center;
+}
+
+
+.navbar_acc li {
+    width: max-content;
+    display: inline;
+    list-style: none;
+}
+
+.acc {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+
+.left_card {
+    float: left;
+    margin: 30px;
+    text-align: center;
+}
+
+.middle_card {
+    text-align: center;
+    margin: 30px;
+    height: 300px;
+}
+
+.middle_card a {
+    text-align: center;
+    padding: 30px;
+}
+
+.right_card {
+    text-align: center;
+    margin: 30px;
+}
+
+.right_card p {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.todos {
+    text-align: center;
+    margin-top: 30px;
+    width: max-content;
+    align-self: center;
+}
+
+.todo {
+    background-color: lightblue;
+    border-radius: 25px;
+    margin: 0 0px 20px;
+    padding: 10px 10px;
+}
+
+.todo_head {
+    border-bottom: black 1px solid;
+}
+
+.btn-success {
+    background-color: green;
+}
+
+.login_form {
+    text-align: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.form-post-title{
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.btn_sign_in{
+    width: 120px;
+    height: 30px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+
+.btn_log_in{
+    width: 120px;
+    height: 30px;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 10px;
+
+}
+
+.form_check{
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}
+
+.register_form {
+    text-align: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.new_todo {
+    text-align: center;
+    align-items: center;
+    margin-top: 100px;
+    display: inline-block;
+}
+
+.form-post-textarea{
+    width: 50%;
+    height: 260px;
+    border-radius: 10px;
+}
+
+.success {
+    background-color: lightgreen;
+    padding: 10px;
+    text-align: center;
+    border-radius: 150px;
+}
+
+.info-msg {
+    background-color: lightskyblue;
+    padding: 10px;
+    text-align: center;
+    border-radius: 150px;
+}
+
+.warning {
+    background-color:red;
+    padding: 10px;
+    text-align: center;
+    border-radius: 150px;
+}
+
+.text-muted {
+    margin-left: 30px;
+}

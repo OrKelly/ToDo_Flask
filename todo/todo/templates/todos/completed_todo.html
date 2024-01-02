@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+    <ul class="navbar_todo">
+        <li><a href="{{ url_for('todos.all_todo') }}">Активные задачи</a></li>
+        <li class="active"><a href="{{ url_for('todos.completed_todo') }}">Выполненные задачи</a></li>
+        <li><a href="{{ url_for('todos.create_todo') }}">Создать задачу</a></li>
+    </ul>
+
+<div class="todos">
+    {% if todos %}
+        <h4 style="text-align: center; margin: 20px">Выполненные дела:</h4>
+    {% for todo in todos %}
+    <div class="todo">
+        <div class="todo_head">
+            {{ todo.name }}
+             <small class="text-muted">{{ todo.date_of_create.strftime('%d.%m.%Y-%H.%M') }}</small>
+        </div>
+        <div class="todo_body">
+            {{ todo.body }}
+        </div>
+        <a href="{{ url_for('todos.delete_todo', todo_id=todo.id) }}"><p class="btn btn-danger btn-sm m-1">Удалить</p></a>
+    </div>
+    {% endfor %}
+    {% else %}
+        <div class="nothing">
+        <h4 style="text-align: center; margin: 20px">У вас нет выполненных дел! Но я уверен, скоро они тут появятся! Скорее, завершите начатые задачи!</h4>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock content %}

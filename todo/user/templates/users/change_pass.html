@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+        <div class="navbar_acc">
+    <ul>
+        <li><a href="{{ url_for('users.account') }}">Аккаунт</a></li>
+        <li ><a href="{{ url_for('users.settings') }}">Настройки</a></li>
+        <li class="active"><a href="{{ url_for('users.change_pass') }}">Безопасность</a></li>
+    </ul>
+    </div>
+<div class="new_todo">
+<form action="" method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+     {% if form.old_password.errors %}
+        {{ form.old_password(class='form-post-title is-invalid', placeholder='Старый пароль') }}
+        <div class="invalid-feedback">
+            {% for errors in form.old_password.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{ form.old_password(class='form-post-title', placeholder='Старый пароль') }}
+        {% endif %}
+
+    {% if form.new_password.errors %}
+        {{ form.new_password(class='form-post-title is-invalid', placeholder='Старый пароль') }}
+        <div class="invalid-feedback">
+            {% for errors in form.new_password.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{ form.new_password(class='form-post-title', placeholder='Старый пароль') }}
+        {% endif %}
+
+        {% if form.repl_password.errors %}
+        {{ form.repl_password(class='form-post-title is-invalid', placeholder='Подтвердите пароль') }}
+        <div class="invalid-feedback">
+            {% for errors in form.repl_password.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{ form.repl_password(class='form-post-title', placeholder='Подтвердите пароль') }}
+        {% endif %}
+        <br>
+        {{ form.submit(class='btn_sign_in') }}
+  </form>
+</div>
+{% endblock content%}

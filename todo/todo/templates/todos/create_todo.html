@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+    <ul class="navbar_todo">
+        <li><a href="{{ url_for('todos.all_todo') }}">Активные задачи</a></li>
+        <li><a href="{{ url_for('todos.completed_todo') }}">Выполненные задачи</a></li>
+        <li class="active"><a href="{{ url_for('todos.create_todo') }}">Создать задачу</a></li>
+    </ul>
+
+<div class="new_todo">
+    <form action="" class="form_todo" enctype="multipart/form-data" method="post">
+
+        {{ form.hidden_tag() }}
+
+        <legend class="legend">{{ legend }}</legend>
+
+       {% if form.name.errors %}
+        {{ form.name(class='form-post-title is-invalid', placeholder='Заголовок') }}
+        <div class="invalid-feedback">
+            {% for errors in form.name.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{ form.name(class='form-post-title', placeholder='Заголовок') }}
+        {% endif %}
+
+        {% if form.body.errors %}
+        {{ form.body(class='form-post-textarea is-invalid', placeholder='Задача') }}<br>
+        <div class="invalid-feedback">
+            {% for errors in form.body.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{ form.body(class='form-post-textarea', placeholder='Задача') }}<br>
+        {% endif %}
+
+
+
+        {{ form.submit(class='btn_sign_in') }}
+
+
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+    <ul class="navbar_todo">
+        <li class="active"><a href="{{ url_for('todos.all_todo') }}">Активные задачи</a></li>
+        <li><a href="{{ url_for('todos.completed_todo') }}">Выполненные задачи</a></li>
+        <li><a href="{{ url_for('todos.create_todo') }}">Создать задачу</a></li>
+    </ul>
+
+
+<div class="todos">
+    {% if todos %}
+        <h4 style="text-align: center; margin: 20px">Ваши личные дела:</h4>
+    {% for todo in todos %}
+        {% if todo.status != 'Выполнено' %}
+    <div class="todo">
+        <div class="todo_head">
+            {{ todo.name }}
+             <small class="text-muted">{{ todo.date_of_create.strftime('%d.%m.%Y-%H.%M') }}</small>
+        </div>
+        <div class="todo_body">
+            {{ todo.body }}
+        </div>
+       <a href="{{ url_for('todos.complete_todo', todo_id=todo.id) }}"><p class="btn btn-danger btn-sm m-1" style="background-color: green; border: green 1px solid;">Завершить</p></a>
+        <a href="{{ url_for('todos.update_todo', todo_id=todo.id) }}"><p class="btn btn-secondary btn-sm m-2 "style="background-color: dodgerblue; border: dodgerblue 1px solid">Обновить</p></a>
+        <a href="{{ url_for('todos.delete_todo', todo_id=todo.id) }}"><p class="btn btn-danger btn-sm m-1">Удалить</p></a>
+    </div>
+        {% endif %}
+    {% endfor %}
+    {% else %}
+        <div class="nothing">
+        <h4 style="text-align: center; margin: 20px">У вас нет запланированных дел! Давайте исправим это!</h4>
+        <a class="button" href="{{ url_for('todos.create_todo') }}">Создать</a>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock content %}
